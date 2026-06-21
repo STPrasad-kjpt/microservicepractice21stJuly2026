@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.thirumala</groupId>
-	<artifactId>Address-Service</artifactId>
+	<artifactId>Employee-Service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Address-Service</name>
+	<name>Employee-Service</name>
 	<description>Demo project for Spring Boot Address MicroService</description>
 	<url />
 	<licenses>
