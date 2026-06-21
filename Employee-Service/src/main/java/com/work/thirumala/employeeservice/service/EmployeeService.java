@@ -47,8 +47,10 @@ public class EmployeeService {
 		AddressResponse addressResponse = restTemplate
 				// .getForObject("http://address-service"+addressContextPath+"/address/{id}",
 				// AddressResponse.class, id);
-				.getForObject("http://ADDRESS-SERVICE" + addressContextPath + "/address/{id}", AddressResponse.class,
-						id);
+				//.getForObject("http://ADDRESS-SERVICE" + addressContextPath + "/address/{id}", AddressResponse.class,
+				//		id);
+			.getForObject("http://ADDRESS-SERVICE" + addressContextPath + "/{id}", AddressResponse.class,
+				id);
 		employeeResponse.setAddressResponse(addressResponse);
 
 		return employeeResponse;
@@ -75,7 +77,7 @@ public class EmployeeService {
 
 		EmployeeResponse employeeResponse = modelMapper.map(employee, EmployeeResponse.class);
 		AddressResponse addressResponse = restTemplate.getForObject(
-				"http://ADDRESS-SERVICE" + addressContextPath + "/address/{id}", AddressResponse.class,
+				"http://ADDRESS-SERVICE" + addressContextPath + "/{id}", AddressResponse.class,
 				employee.getId());
 		employeeResponse.setAddressResponse(addressResponse);
 
@@ -88,7 +90,7 @@ public class EmployeeService {
 		for(Employee employ : employees) {
 		EmployeeResponse employeeResponse = modelMapper.map(employ, EmployeeResponse.class);
 		AddressResponse addressResponse = restTemplate.getForObject(
-				"http://ADDRESS-SERVICE" + addressContextPath + "/address/{id}", AddressResponse.class,
+				"http://ADDRESS-SERVICE" + addressContextPath + "/{id}", AddressResponse.class,
 				employ.getId());
 		employeeResponse.setAddressResponse(addressResponse);
 		allEmployees.add(employeeResponse);
